@@ -1,0 +1,23 @@
+<div class="container my-2">
+  <div class="text-center"><b>
+      <h4> CURD Operation</h4>
+    </b></div>
+  <div class="row">
+    <div class="col-sm-8"></div>
+    <div class="col-sm-4"><button class="form-control btn btn-info" data-toggle="tooltip" title="Add Profile!"><a
+          class="text-white" routerLink="/profileform"><i class="fas fa-plus"></i> New Profile</a></button></div>
+  </div><br>
+  <div class="row">
+    <div class="col-sm-4 my-1" *ngFor="let profile of profiles; let i = index">
+      <div class="card card-info">
+        <div class="card-header ">{{profile.firstname}} {{profile.lastname}} <button class="btn btn-info  float-right"
+            (click)="showProfileDetails(profile)" data-toggle="tooltip" title="Edit Profile!"><i
+              class="fas fa-edit"></i></button>&nbsp;<button class="btn btn-danger  float-right"
+            (click)="deleteProfileDetails(profile)" data-toggle="tooltip" title="Delete Profile!"><i
+              class="fas fa-trash"></i></button></div>
+        <div class="card-body"><span><b>Email : </b>
+            {{profile.email}} </span><br> <span><b> Mobile : </b> {{profile.mobile}}</span> </div>
+      </div>
+    </div>
+  </div>
+</div>
